@@ -162,13 +162,7 @@
 :root[data-theme] .sidebar .head { padding-left: 22px; }
 :root[data-theme] .splitter-x { background-color: transparent !important; }
 
-/* Bubbly pill tabs. */
 :root[data-theme] .tab-bar { box-shadow: none; }
-:root[data-theme] .tab-bar .strip { align-items: center; gap: 8px; padding: 0 8px; }
-:root[data-theme] .tab-bar .strip .tab { height: 30px; border-radius: 999px; background-image: none; }
-:root[data-theme] .tab-bar .strip .tab::before,
-:root[data-theme] .tab-bar .strip .tab::after { display: none; }
-:root[data-theme] .tab-bar .strip .tab.is-active { background-color: #f6f0e6; color: #2a2140; font-weight: 700; }
 :root[data-theme] .chip-button { border-radius: 999px; }
 
 :root[data-theme] .start .hero h1::after {
@@ -176,6 +170,25 @@
   font-size: 58px;
   letter-spacing: 0.06em;
   text-shadow: 0 0 22px rgba(255, 255, 255, 0.45), 0 4px 0 #8d5fd3;
+}
+
+/* Tabs. */
+:root[data-theme] .tab-bar .strip .tab { background-image: none; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; top: auto; width: auto; }
+
+/* Speech-bubble tabs. */
+:root[data-theme] .tab-bar .strip { align-items: center; gap: 8px; padding: 0 8px; }
+:root[data-theme] .tab-bar .strip .tab { height: 30px; border-radius: 16px 16px 16px 4px; }
+:root[data-theme] .tab-bar .strip .tab.is-active { background-color: #f6f0e6; color: #2a2140; font-weight: 700; box-shadow: 0 3px 0 #8d5fd3; }
+:root[data-theme] .tab-bar .strip .tab.is-active * { color: #2a2140; }
+
+/* Script tab icon. */
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph > * { display: none; }
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph {
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
 }
 
 /* Animated wallpaper behind the whole app. */

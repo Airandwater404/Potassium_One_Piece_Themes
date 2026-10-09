@@ -154,23 +154,6 @@
 :root[data-theme] .splitter-x { background-color: transparent !important; }
 :root[data-theme] header.titlebar { border-bottom: 2px dashed rgba(40, 24, 60, 0.4); }
 :root[data-theme] .tab-bar { box-shadow: none; border-bottom: 2px dashed rgba(40, 24, 60, 0.35); }
-
-/* Hand-drawn tabs: wobbly corners and an ink outline. */
-:root[data-theme] .tab-bar .strip { gap: 6px; padding: 4px 6px 0; }
-:root[data-theme] .tab-bar .strip .tab {
-  background-image: none;
-  border: 2px solid transparent;
-  border-bottom: none;
-  border-radius: 12px 4px 0 0 / 8px 10px 0 0;
-}
-:root[data-theme] .tab-bar .strip .tab::before,
-:root[data-theme] .tab-bar .strip .tab::after { display: none; }
-:root[data-theme] .tab-bar .strip .tab.is-active {
-  border-color: #1e1628;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #7a2fd0;
-  font-weight: 700;
-}
 :root[data-theme] .chip-button { border: 2px solid #1e1628; border-radius: 10px 4px 10px 4px; }
 :root[data-theme] .chip-button.is-accent { box-shadow: 3px 3px 0 #1e1628; }
 
@@ -179,6 +162,24 @@
   -webkit-text-stroke: 2px #1e1628;
   text-shadow: 4px 4px 0 #7a2fd0;
   font-size: 56px;
+}
+
+/* Tabs. */
+:root[data-theme] .tab-bar .strip .tab { background-image: none; }
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; top: auto; width: auto; }
+
+/* Hand-drawn tabs: wobbly corners and an ink outline. */
+:root[data-theme] .tab-bar .strip { gap: 6px; padding: 4px 6px 0; }
+:root[data-theme] .tab-bar .strip .tab { border: 2px solid transparent; border-bottom: none; border-radius: 12px 4px 0 0 / 8px 10px 0 0; }
+:root[data-theme] .tab-bar .strip .tab.is-active { border-color: #1e1628; background-color: rgba(255, 255, 255, 0.85); color: #7a2fd0; font-weight: 700; }
+
+/* Script tab icon. */
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph > * { display: none; }
+:root[data-theme] .tab-bar .strip .tab:not(.no-close) .tab-glyph {
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='15.5' rx='10' ry='3.5'/%3E%3Cpath d='M6 15c0-4.5 2.7-8 6-8s6 3.5 6 8'/%3E%3Cpath d='M6.3 12.6c3.7 1.3 7.7 1.3 11.4 0'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='15.5' rx='10' ry='3.5'/%3E%3Cpath d='M6 15c0-4.5 2.7-8 6-8s6 3.5 6 8'/%3E%3Cpath d='M6.3 12.6c3.7 1.3 7.7 1.3 11.4 0'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
 }
 
 /* Animated wallpaper behind the whole app. */

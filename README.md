@@ -39,8 +39,8 @@ Each theme below also has its own text; open **What the Japanese means** under i
 ## Zoro · Samurai
 
 <picture>
-  <source srcset="zoro/screens.avif" type="image/avif">
-  <img src="zoro/screens.jpg" alt="Zoro · Samurai theme">
+  <source srcset="zoro/ui.avif" type="image/avif">
+  <img src="zoro/ui.jpg" alt="Zoro · Samurai theme">
 </picture>
 
 <picture>
@@ -66,8 +66,8 @@ Each theme below also has its own text; open **What the Japanese means** under i
 ## Luffy Gear 5 · Sketch
 
 <picture>
-  <source srcset="luffy-sketch/screens.avif" type="image/avif">
-  <img src="luffy-sketch/screens.jpg" alt="Luffy Gear 5 · Sketch theme">
+  <source srcset="luffy-sketch/ui.avif" type="image/avif">
+  <img src="luffy-sketch/ui.jpg" alt="Luffy Gear 5 · Sketch theme">
 </picture>
 
 <picture>
@@ -93,8 +93,8 @@ Each theme below also has its own text; open **What the Japanese means** under i
 ## Luffy Gear 5 · Minimalist
 
 <picture>
-  <source srcset="luffy-mini/screens.avif" type="image/avif">
-  <img src="luffy-mini/screens.jpg" alt="Luffy Gear 5 · Minimalist theme">
+  <source srcset="luffy-mini/ui.avif" type="image/avif">
+  <img src="luffy-mini/ui.jpg" alt="Luffy Gear 5 · Minimalist theme">
 </picture>
 
 <picture>
