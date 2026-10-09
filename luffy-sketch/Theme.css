@@ -1,0 +1,187 @@
+/* Luffy Gear 5 · Sketch theme for Potassium. Base theme: Light. */
+:root[data-theme] {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --bg-app: rgba(252, 250, 255, 0.15);
+  --bg-chrome: rgba(252, 250, 255, 0.7);
+  --bg-sidebar: rgba(252, 250, 255, 0.72);
+  --bg-editor: rgba(252, 250, 255, 0.62);
+  --bg-panel: rgba(252, 250, 255, 0.74);
+  --bg-status: rgba(252, 250, 255, 0.8);
+  --bg-elevated: rgba(252, 250, 255, 0.96);
+  --bg-input: rgba(252, 250, 255, 0.6);
+  --bg-hover: rgba(122, 47, 208, 0.08);
+  --bg-active: rgba(122, 47, 208, 0.14);
+  --border: rgba(40, 24, 60, 0.16);
+  --border-strong: rgba(40, 24, 60, 0.34);
+
+  --text: #1e1628;
+  --text-muted: #4f4462;
+  --text-faint: #8b809c;
+  --row-icon: #8f4ce0;
+
+  --accent: rgb(122, 47, 208);
+  --accent-hover: #8f4ce0;
+  --accent-soft: rgba(122, 47, 208, 0.2);
+  --on-accent: #ffffff;
+  --tab-accent: rgb(122, 47, 208);
+  --tab-rule: transparent;
+  --tab-glyph: #8f4ce0;
+  --tab-divider-width: 0px;
+  --tab-active-bg: rgba(122, 47, 208, 0.16);
+
+  --ok: #1f8a4c;
+  --warn: #b7791f;
+  --danger: #c0263d;
+  --titlebar-fg: #1e1628;
+  --titlebar-close-hover: #7a2fd0;
+  --scrollbar-thumb: rgba(122, 47, 208, 0.3);
+}
+
+/* Settings opens over everything; keep it readable over the moving wallpaper. */
+:root[data-theme] .settings-dialog {
+  background-color: rgba(252, 250, 255, 0.92) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+}
+
+:root[data-theme] .settings-dialog .settings {
+  background-color: transparent !important;
+}
+
+/* Monaco paints its own solid background; let the wallpaper through. */
+.monaco-editor,
+.monaco-editor .overflow-guard,
+.monaco-editor-background,
+.monaco-editor .margin,
+.monaco-editor .inputarea.ime-input {
+  background-color: transparent !important;
+}
+
+.monaco-editor .view-overlays .current-line,
+.monaco-editor .margin-view-overlays .current-line-margin {
+  background: rgba(122, 47, 208, 0.07) !important;
+  border: none !important;
+}
+
+.monaco-editor .line-numbers { color: #a59cb4 !important; }
+.monaco-editor .line-numbers.active-line-number { color: #7a2fd0 !important; }
+.monaco-editor .view-lines { text-shadow: 0 0 3px rgba(255, 255, 255, 0.9); }
+.monaco-editor .scroll-decoration { box-shadow: none !important; }
+
+/* The minimap is a canvas with a solid fill; blending drops it into the wallpaper. */
+.monaco-editor .minimap,
+.monaco-editor .minimap canvas {
+  mix-blend-mode: multiply !important;
+}
+
+.monaco-editor .minimap { opacity: 0.55 !important; }
+.monaco-editor .minimap-shadow-visible { box-shadow: none !important; }
+
+/* Show the wallpaper on the loading and login screens instead of Potassium's own picture. */
+:root[data-theme] .backdrop {
+  background: rgba(30, 28, 44, 0.32) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* Japanese labels next to the English ones. */
+:root[data-theme] .titlebar-title { font-size: 0 !important; }
+:root[data-theme] .titlebar-title::after {
+  content: "ニカ · カリウム";
+  font-size: 13px;
+  font-family: "Yu Gothic UI", "Meiryo UI", "Segoe UI", sans-serif;
+  letter-spacing: 0.28em;
+}
+
+:root[data-theme] .sidebar .head-title { font-size: 0 !important; }
+:root[data-theme] .sidebar .head-title::after {
+  content: "冒険";
+  font-size: 14px;
+  font-family: "Yu Gothic UI", "Meiryo UI", "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+:root[data-theme] .sidebar .section:has(+ .section) .section-title::after { content: " · スクリプト"; letter-spacing: 0.04em; }
+:root[data-theme] .sidebar .section + .section .section-title::after { content: " · 自動実行"; letter-spacing: 0.04em; }
+:root[data-theme] .console .tabs .tab:nth-child(1)::after { content: "　出力"; letter-spacing: 0.04em; }
+:root[data-theme] .console .tabs .tab:nth-child(2)::after { content: "　問題"; letter-spacing: 0.04em; }
+
+:root[data-theme] .start .hero h1 { font-size: 0 !important; line-height: 1 !important; }
+:root[data-theme] .start .hero h1::before {
+  content: "MONKEY D. LUFFY · 太陽の神";
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  color: var(--accent);
+}
+
+:root[data-theme] .start .hero h1::after {
+  content: "ギア５";
+  font-family: "Yu Gothic UI", "Meiryo UI", "Segoe UI", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+:root[data-theme] .start .links h2::after { content: "　始める"; }
+:root[data-theme] .start .recent h2::after { content: "　最近"; }
+:root[data-theme] .start .tip h2::after { content: "　今日のヒント"; }
+
+/* A vertical line of text at the foot of the explorer. */
+:root[data-theme] .sidebar { position: relative; isolation: isolate; }
+:root[data-theme] .sidebar::after {
+  content: "解放のドラム";
+  position: absolute;
+  right: 16px;
+  bottom: 22px;
+  writing-mode: vertical-rl;
+  font-family: "Yu Gothic UI", "Meiryo UI", "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(122, 47, 208, 0.5);
+  pointer-events: none;
+}
+
+/* Pencil-sketch lines everywhere. */
+:root[data-theme] .sidebar { border-right: 2px dashed rgba(40, 24, 60, 0.45); }
+:root[data-theme] .splitter-x { background-color: transparent !important; }
+:root[data-theme] header.titlebar { border-bottom: 2px dashed rgba(40, 24, 60, 0.4); }
+:root[data-theme] .tab-bar { box-shadow: none; border-bottom: 2px dashed rgba(40, 24, 60, 0.35); }
+
+/* Hand-drawn tabs: wobbly corners and an ink outline. */
+:root[data-theme] .tab-bar .strip { gap: 6px; padding: 4px 6px 0; }
+:root[data-theme] .tab-bar .strip .tab {
+  background-image: none;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: 12px 4px 0 0 / 8px 10px 0 0;
+}
+:root[data-theme] .tab-bar .strip .tab::before,
+:root[data-theme] .tab-bar .strip .tab::after { display: none; }
+:root[data-theme] .tab-bar .strip .tab.is-active {
+  border-color: #1e1628;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #7a2fd0;
+  font-weight: 700;
+}
+:root[data-theme] .chip-button { border: 2px solid #1e1628; border-radius: 10px 4px 10px 4px; }
+:root[data-theme] .chip-button.is-accent { box-shadow: 3px 3px 0 #1e1628; }
+
+:root[data-theme] .start .hero h1::after {
+  color: #ffffff;
+  -webkit-text-stroke: 2px #1e1628;
+  text-shadow: 4px 4px 0 #7a2fd0;
+  font-size: 56px;
+}
+
+/* Animated wallpaper behind the whole app. */
+html, body {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.15) 45%, rgba(255, 255, 255, 0) 75%), url("https://raw.githubusercontent.com/Airandwater404/Potassium_One_Piece_Themes/main/luffy-sketch/luffy-sketch.avif") center / cover fixed no-repeat, #fcfaff !important;
+}
